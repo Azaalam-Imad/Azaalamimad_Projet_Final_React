@@ -1,53 +1,65 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Images from '../constants/Images';
-import { FaCircleChevronLeft } from "react-icons/fa6";
-import { FaCircleChevronRight } from "react-icons/fa6";
-
+import '../App.css';
+import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 
 const Caroussel = () => {
-   
-			let currentIndex = 0;
+  const carouselRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-			function scrollCarousel(direction) {
-				const carousel = document.getElementById("carousel");
-				const totalSlides = carousel.children.length;
-				currentIndex =
-					(currentIndex + direction + totalSlides) % totalSlides;
-				carousel.style.transform = `translateX(-${
-					currentIndex * 100
-				}%)`;
-			}
-		
-    return (
-        <>
-        
-            <body className="bg-amber-800 flex items-center justify-center h-[70vh] mt-40">
-		<div className="relative w-full max-w-4xl mx-auto ">
-			<div className="overflow-hidden relative rounded-lg bg-amber-600 h-100">
-			</div>
+  const scrollCarousel = (direction) => {
+    const totalSlides = carouselRef.current.children.length;
+    const newIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    setCurrentIndex(newIndex);
+  };
 
-			<button
-				className="absolute top-1/2 left-0 transform -translate-y-1/2 p-3 bg-gray-700 bg-opacity-50 rounded-full text-white hover:bg-opacity-75 focus:outline-none"
-				onclick={()=>scrollCarousel(-1)}
-			>
-				<FaCircleChevronLeft />
+  return (
+    <div className="mx-auto relative overflow-hidden rounded-lg">
+      <div
+        ref={carouselRef}
+        className="flex transition-transform duration-700 h-80"
+        style={{ transform: `translateX(-${currentIndex * 100}vw)` }}
+      >
+        <div className="w-[100vw] flex-shrink-0">
+          <img
+            src={Images.carousel3}
+            className="object-cover w-[100vw] h-full"
+            alt="Slide 1"
+          />
+        </div>
+        <div className="w-[100vw] flex-shrink-0">
+          <img
+            src={Images.carousel2}
+            className="object-cover w-[100vw] h-full"
+            alt="Slide 2"
+          />
+        </div>
+        <div className="w-[100vw] flex-shrink-0">
+          <img
+            src={Images.carousel1}
+            className="object-cover w-[100vw] h-full"
+            alt="Slide 3"
+          />
+        </div>
+      </div>
 
-			</button>
-			<button
-				className="absolute top-1/2 right-0 transform -translate-y-1/2 p-3 bg-gray-700 bg-opacity-50 rounded-full text-white hover:bg-opacity-75 focus:outline-none"
-				onclick={()=>scrollCarousel(1)}
-			>
-				<FaCircleChevronRight className='text-blue-400' />
-
-			</button>
-		</div>
-
-		
-	</body>
       
-        </>
-        
-    );
+      <button
+        onClick={() => scrollCarousel(-1)}
+        className="absolute top-1/2 left-3 transform -translate-y-1/2 z-40 w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 transition"
+      >
+        <FaCircleChevronLeft className="text-gray-600 w-5 h-5 mx-auto" />
+      </button>
+
+      
+      <button
+        onClick={() => scrollCarousel(1)}
+        className="absolute top-1/2 right-3 transform -translate-y-1/2 z-40 w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 transition"
+      >
+        <FaCircleChevronRight className="text-gray-600 w-5 h-5 mx-auto" />
+      </button>
+    </div>
+  );
 };
 
 export default Caroussel;

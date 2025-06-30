@@ -1,11 +1,12 @@
 import React from 'react';
 import Images from '../constants/Images';
-// import Caroussel from '../components/Caroussel';
+import Caroussel from '../components/Caroussel';
+import Caroussel2 from '../components/Caroussel2';
 
 const Homes = () => {
     return (
         <div>
-            {/* <Caroussel /> */}
+            <Caroussel />
 
             <section className='flex justify-center gap-6'>
                 <div className='flex flex-col gap-6'>
@@ -41,6 +42,8 @@ const Homes = () => {
                 </div>
                 
             </section>
+            <Caroussel2 />
+            
            
         </div>
     );
