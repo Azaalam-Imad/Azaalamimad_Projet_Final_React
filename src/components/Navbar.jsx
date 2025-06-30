@@ -8,7 +8,7 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 
 const Navbar = () => {
     return (
-        <div className='relative top-0 left-0 bg-white'>
+        <div className='relative top-0 left-0  z-50 w-full h-[10vh]'>
             <div className='flex items-center justify-between py-3 px-15 fixed w-full  top-0 left-0 bg-white'>
             <img src={Images.Logo} alt="" />
              <ul className=" py-2 flex gap-x-10 text-gray-500">

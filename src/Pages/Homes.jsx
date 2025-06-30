@@ -42,7 +42,10 @@ const Homes = () => {
                 </div>
                 
             </section>
-            <Caroussel2 />
+            <section className='mt-30'>
+                <h1 className='text-center font-bold text-[30px]'>FEATURED PRODUCTS</h1>
+                <Caroussel2 />
+            </section>
             
            
         </div>
