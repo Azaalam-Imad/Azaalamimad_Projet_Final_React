@@ -10,7 +10,7 @@
       "onSale": false
     },
     {
-     " id": 2,
+     "id": 2,
       "name": "Boxy1 T-Shirt with Roll Sleeve",
       "price": 20.00,
       "image": "shopy2",
@@ -20,7 +20,7 @@
       "onSale": false
     },
     {
-     " id": 3,
+     "id": 3,
       "name": "Boxy3 T-Shirt with Roll Sleeve",
       "price": 30.00,
       "image": "shopy3",
@@ -30,7 +30,7 @@
       "onSale": true
     },
     {
-     " id": 4,
+     "id": 4,
       "name": "Boxy4 T-Shirt with Roll Sleeve",
       "price": 20.00,
       "image": "shopy4",
@@ -40,7 +40,7 @@
       "onSale": false
     },
     {
-     " id": 5,
+     "id": 5,
       "name": "Boxy5 T-Shirt with Roll Sleeve",
       "price": 20.00,
       "image": "shopy5",
@@ -50,7 +50,7 @@
       "onSale": false
     },
     {
-     " id": 6,
+     "id": 6,
       "name": "Boxy6 T-Shirt with Roll Sleeve",
       "price": 20.00,
       "image": "shopy6",
@@ -59,7 +59,7 @@
       "size": ["S", "M" ,"XL"],
       "onSale": false
     },{
-     " id": 7,
+     "id": 7,
       "name": "Boxy7 T-Shirt with Roll Sleeve",
       "price": 20.00,
       "image": "shopy7",

@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import Images from '../constants/Images';
 import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 import ddata from "../json/produit.json";
+import { Link } from 'react-router-dom';
 
 const Caroussel2 = () => {
   const carouselRef = useRef(null);
@@ -61,8 +62,7 @@ const Caroussel2 = () => {
                   </button>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-medium text-gray-800 hover:text-amber-800 cursor-pointer">{product.name}</h3>
-                  <span className="text-lg font-semibold text-gray-900">${product.price.toFixed(2)}</span>
+<Link to={`/ProductDetailPage/${product.id}`}><h3 className="font-medium text-gray-800 mb-2 hover:text-amber-800 cursor-pointer">{product.name}</h3></Link>                  <span className="text-lg font-semibold text-gray-900">${product.price.toFixed(2)}</span>
                 </div>
               </div>
             ))}

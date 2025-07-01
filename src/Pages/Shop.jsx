@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ddata from '../json/produit.json'
 import { Search, Star } from 'lucide-react';
 import Images from '../constants/Images';
+import { Link } from 'react-router-dom';
 
 const Shop = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -243,7 +244,7 @@ const matchesPrice = selectedPrices.length === 0 || exists ;
                     </button>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-medium text-gray-800 mb-2 hover:text-amber-800 cursor-pointer">{product.name}</h3>
+                    <Link to={`/ProductDetailPage/${product.id}`}><h3 className="font-medium text-gray-800 mb-2 hover:text-amber-800 cursor-pointer">{product.name}</h3></Link>
                     <div className="flex justify-between items-center">
                       <span className="text-lg font-semibold text-gray-900">${product.price.toFixed(2)}</span>
                      
