@@ -2,10 +2,12 @@ import React, { useRef, useState } from 'react';
 import Images from '../constants/Images';
 import '../App.css';
 import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
 
 const Caroussel = () => {
   const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navg =useNavigate()
 
   const scrollCarousel = (direction) => {
     const totalSlides = carouselRef.current.children.length;
@@ -30,7 +32,7 @@ const Caroussel = () => {
             <div className="absolute z-40 left-0 bottom-0 w-full h-full flex flex-col items-center justify-center gap-2">
               <h1 className="text-white">Women Collection 2025</h1>
               <h2 className="text-white text-[40px] md:text-[80px] font-bold">New Arrivals</h2>
-              <button className="bg-white px-10 md:px-16 py-3 rounded-full mt-10">SHOP NOW</button>
+              <button onClick={()=>navg("/shop")} className="bg-white px-10 md:px-16 py-3 rounded-full mt-10">SHOP NOW</button>
             </div>
           </div>
         ))}

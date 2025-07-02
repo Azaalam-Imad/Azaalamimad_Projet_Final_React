@@ -83,7 +83,16 @@ const Shop = () => {
 
   return (
     <div className="min-h-screen ">
-      
+      <div className="relative h-[300px] bg-black">
+              <img
+                alt="Blog Banner"
+                src={Images.carousel3}
+                className="object-cover w-full h-full opacity-50"
+              />
+              <div className="absolute inset-0 flex justify-center items-center">
+                <h1 className="text-white font-bold text-5xl">Shop</h1>
+              </div>
+            </div>
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="w-full lg:w-64 bg-white p-6 rounded-lg h-fit ">

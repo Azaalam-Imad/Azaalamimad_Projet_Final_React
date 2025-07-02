@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Images from '../constants/Images';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -41,6 +42,16 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <div className="relative h-[300px] bg-black mb-20">
+              <img
+                alt="Blog Banner"
+                src={Images.carousel3}
+                className="object-cover w-full h-full opacity-50"
+              />
+              <div className="absolute inset-0 flex justify-center items-center">
+                <h1 className="text-white font-bold text-5xl">Contact</h1>
+              </div>
+            </div>
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-1/2">
           <iframe

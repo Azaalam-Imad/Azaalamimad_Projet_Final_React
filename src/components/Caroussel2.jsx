@@ -1,13 +1,15 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import Images from '../constants/Images';
 import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 import ddata from "../json/produit.json";
 import { Link } from 'react-router-dom';
+import { Mycontext } from '../context/Context';
 
 const Caroussel2 = () => {
   const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(4);
+   const {addcart}= useContext(Mycontext)
 
   useEffect(() => {
     const updateItemsPerSlide = () => {
@@ -62,7 +64,7 @@ const Caroussel2 = () => {
                       Sale
                     </span>
                   )}
-                  <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-1 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
+                  <button onClick={()=>addcart(product.id)} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-1 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
                     Add to Cart
                   </button>
                 </div>

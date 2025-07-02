@@ -14,6 +14,8 @@ import CreateAccount from './Pages/CreateAccount'
 import Contact from './Pages/Contact'
 import Carts from './Pages/Carts'
 import Blog from './Pages/Blog'
+import  Features from './Pages/Features'
+import Sale from './Pages/Sale'
 
 function App() {
   
@@ -34,6 +36,8 @@ function App() {
       <Route path="/Contact" element={<Contact />} />
       <Route path="/Carts" element={<Carts />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/Features" element={<Features />} />
+      <Route path="/sale" element={<Sale />} />
     </Routes>
     <Footer />
     </MyProvider>

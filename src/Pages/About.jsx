@@ -3,7 +3,19 @@ import Images from '../constants/Images';
 
 const About = () => {
     return (
+        <>
+        <div className="relative h-[300px] bg-black mb-30">
+                    <img
+                      alt="Blog Banner"
+                      src={Images.carousel3}
+                      className="object-cover w-full h-full opacity-50"
+                    />
+                    <div className="absolute inset-0 flex justify-center items-center">
+                      <h1 className="text-white font-bold text-5xl">About</h1>
+                    </div>
+                  </div>
         <div className='w-full px-4 md:px-10 py-10'>
+            
             
             <div className='flex flex-col lg:flex-row gap-6 items-center'>
                 
@@ -25,7 +37,7 @@ Phasellus egestas nisi nisi, lobortis ultricies risus semper nec. Vestibulum pha
                     </div>
                 </div>
             </div>
-        </div>
+        </div></>
     );
 };
 

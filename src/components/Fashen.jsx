@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Images from '../constants/Images'
+import { useNavigate } from 'react-router-dom';
 
 const FashionEcommerce = () => {
+  const navg= useNavigate()
   const [timeLeft, setTimeLeft] = useState({
     days: 74,
     hours: 12,
@@ -59,7 +61,7 @@ const FashionEcommerce = () => {
         <h2 className="text-2xl md:text-6xl font-light mb-2">The Beauty</h2>
         <h1 className="text-3xl md:text-8xl font-bold tracking-wider">LOOKBOOK</h1>
       </div>
-      <button className="bg-white text-gray-800 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+      <button onClick={()=>navg("/shop")} className="bg-white text-gray-800 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
         VIEW COLLECTION
       </button>
     </div>
