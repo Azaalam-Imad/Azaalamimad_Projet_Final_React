@@ -16,8 +16,13 @@ import shopy5 from '../assets/images/shopy6.webp'
 import shopy6 from '../assets/images/shopy7.webp'
 import shopy7 from '../assets/images/shopy8.webp'
 import bgshop from '../assets/images/banner.webp'
+import bnr8 from '../assets/images/banner-08.jpg'
+import shopit from '../assets/images/shop-item-09.jpg'
+import blog1 from '../assets/images/blog-01.jpg'
+import blog2 from '../assets/images/blog-02.jpg'
+import blog3 from '../assets/images/blog-03.jpg'
 // import bgabout from '../assets/images/'
 
 
 
-export default {Logo,carousel1,carousel2,carousel3,cards1,cards2,cards3,cards4,cards5,cards6,shopy1,shopy2,shopy3,shopy4,shopy5,shopy6,shopy7,bgshop}
+export default {blog3 ,blog1, blog2 ,shopit,Logo,carousel1,carousel2,carousel3,cards1,cards2,cards3,cards4,cards5,cards6,shopy1,shopy2,shopy3,shopy4,shopy5,shopy6,shopy7,bgshop,bnr8}

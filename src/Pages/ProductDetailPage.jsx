@@ -47,7 +47,6 @@ const ProductDetailPage = () => {
       color: selectedColor,
       quantity: quantity
     });
-    // Add your cart logic here
   };
 
   return (
@@ -55,9 +54,7 @@ const ProductDetailPage = () => {
     <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Left Column - Images */}
           <div className="flex gap-4">
-            {/* Thumbnail Column */}
             <div className="flex flex-col gap-2 w-20">
               {product.map((image, index) => (
                 <button
@@ -76,7 +73,6 @@ const ProductDetailPage = () => {
               ))}
             </div>
 
-            {/* Main Image */}
             <div className="flex-1">
               <div className="aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden">
                 <img
@@ -88,9 +84,7 @@ const ProductDetailPage = () => {
             </div>
           </div>
 
-          {/* Right Column - Product Info */}
           <div className="space-y-6">
-            {/* Product Title and Price */}
             <div>
               <h1 className="text-2xl font-semibold text-gray-900 mb-2">
                 {products.name}
@@ -100,12 +94,10 @@ const ProductDetailPage = () => {
               </p>
             </div>
 
-            {/* Description */}
             <p className="text-gray-600 leading-relaxed">
               {product.description}
             </p>
 
-            {/* Size Selection */}
             <div>
               <h3 className="text-sm font-medium text-gray-900 mb-3">Size</h3>
               <div className="flex gap-2">
@@ -125,7 +117,6 @@ const ProductDetailPage = () => {
               </div>
             </div>
 
-            {/* Color Selection */}
             <div>
               <h3 className="text-sm font-medium text-gray-900 mb-3">Color</h3>
               <div className="flex gap-2">
@@ -144,7 +135,6 @@ const ProductDetailPage = () => {
               </div>
             </div>
 
-            {/* Quantity and Add to Cart */}
             <div className="flex items-center gap-4">
               <div className="flex items-center border border-gray-300 rounded-md">
                 <button
@@ -173,7 +163,6 @@ const ProductDetailPage = () => {
               </button>
             </div>
 
-            {/* Product Meta */}
             <div className="text-sm text-gray-600 space-y-1">
               <p>
                 <span className="font-medium">Brand:</span>{' '}
@@ -193,9 +182,7 @@ const ProductDetailPage = () => {
               </p>
             </div>
 
-            {/* Expandable Sections */}
             <div className="space-y-4 border-t pt-6">
-              {/* Description */}
               <div className="border-b border-gray-200">
                 <button
                   onClick={() => toggleSection('description')}
@@ -226,7 +213,6 @@ const ProductDetailPage = () => {
                 )}
               </div>
 
-              {/* Additional Information */}
               <div className="border-b border-gray-200">
                 <button
                   onClick={() => toggleSection('additionalInfo')}
@@ -255,7 +241,6 @@ const ProductDetailPage = () => {
                 )}
               </div>
 
-              {/* Reviews */}
               <div>
                 <button
                   onClick={() => toggleSection('reviews')}

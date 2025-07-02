@@ -14,68 +14,40 @@ const Caroussel = () => {
   };
 
   return (
-    <div className="mx-auto relative overflow-hidden rounded-lg mb-25 ">
+    <div className="mx-auto relative overflow-hidden rounded-lg mb-6 w-full max-w-screen">
       <div
         ref={carouselRef}
-        className="flex transition-transform duration-700 h-[80vh]"
-        style={{ transform: `translateX(-${currentIndex * 100}vw)` }}
+        className="flex transition-transform duration-700 ease-in-out h-[60vh] md:h-[80vh] w-full"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        <div className="w-[100vw] flex-shrink-0 relative">
-          <img
-            src={Images.carousel3}
-            className="object-cover w-[100vw] h-full"
-            alt="Slide 1"
-          />
-          <div className=' absolute z-40 left-0 bottom-0 w-full h-full flex flex-col items-center justify-center gap-2'>
-                        <h1 className='text-white'>Women Collection 2025</h1>
-                        <h2 className='text-white text-[80px] font-bold'>New Arrivals</h2>
-                        <button className='bg-white px-16 py-3 rounded-[50px] mt-10'>SHOP NOW</button>
-
+        {[Images.carousel3, Images.carousel2, Images.carousel1].map((img, idx) => (
+          <div key={idx} className="w-full flex-shrink-0 relative">
+            <img
+              src={img}
+              className="object-cover w-full h-full"
+              alt={`Slide ${idx + 1}`}
+            />
+            <div className="absolute z-40 left-0 bottom-0 w-full h-full flex flex-col items-center justify-center gap-2">
+              <h1 className="text-white">Women Collection 2025</h1>
+              <h2 className="text-white text-[40px] md:text-[80px] font-bold">New Arrivals</h2>
+              <button className="bg-white px-10 md:px-16 py-3 rounded-full mt-10">SHOP NOW</button>
+            </div>
           </div>
-        </div>
-        <div className="w-[100vw] flex-shrink-0 relative">
-          <img
-            src={Images.carousel2}
-            className="object-cover w-[100vw] h-full"
-            alt="Slide 2"
-          />
-          <div className='  absolute z-40 left-0 bottom-0 w-full h-full flex flex-col items-center justify-center gap-2'>
-                        <h1 className='text-white'>Women Collection 2025</h1>
-                        <h2 className='text-white text-[80px] font-bold'>New Arrivals</h2>
-                        <button className='bg-white px-16 py-3 rounded-[50px] mt-10'>SHOP NOW</button>
-
-          </div>
-          
-        </div>
-        <div className="w-[100vw] flex-shrink-0 relative">
-          <img
-            src={Images.carousel1}
-            className="object-cover w-[100vw] h-full"
-            alt="Slide 3"
-          />
-          <div className='  absolute z-40 left-0 bottom-0 w-full h-full flex flex-col items-center justify-center gap-2'>
-                        <h1 className='text-white'>Women Collection 2025</h1>
-                        <h2 className='text-white text-[80px] font-bold'>New Arrivals</h2>
-                        <button className='bg-white px-16 py-3 rounded-[50px] mt-10'>SHOP NOW</button>
-
-          </div>
-        </div>
+        ))}
       </div>
 
-      
       <button
         onClick={() => scrollCarousel(-1)}
-        className="absolute top-1/2 left-3 transform -translate-y-1/2 z-40 w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 transition"
+        className="absolute top-1/2 left-3 md:left-6 transform -translate-y-1/2 z-40 w-10 h-10 md:w-12 md:h-12 bg-gray-200/50 rounded-full hover:bg-gray-300 flex items-center justify-center transition"
       >
-        <FaCircleChevronLeft className="text-gray-600 w-5 h-5 mx-auto" />
+        <FaCircleChevronLeft className="text-gray-600 w-5 md:w-6 h-5 md:h-6" />
       </button>
 
-      
       <button
         onClick={() => scrollCarousel(1)}
-        className="absolute top-1/2 right-3 transform -translate-y-1/2 z-40 w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 transition"
+        className="absolute top-1/2 right-3 md:right-6 transform -translate-y-1/2 z-40 w-10 h-10 md:w-12 md:h-12 bg-gray-200/50 rounded-full hover:bg-gray-300 flex items-center justify-center transition"
       >
-        <FaCircleChevronRight className="text-gray-600 w-5 h-5 mx-auto" />
+        <FaCircleChevronRight className="text-gray-600 w-5 md:w-6 h-5 md:h-6" />
       </button>
     </div>
   );
