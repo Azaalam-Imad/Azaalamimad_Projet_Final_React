@@ -65,6 +65,7 @@ const Caroussel2 = () => {
                     </span>
                   )}
                   <button onClick={()=>addcart(product.id)} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-1 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
+                    
                     Add to Cart
                   </button>
                 </div>
@@ -99,6 +100,8 @@ const Caroussel2 = () => {
       </button>
     </div>
   );
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 };
 
 export default Caroussel2;

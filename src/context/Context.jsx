@@ -18,6 +18,14 @@ export const MyProvider = ({ children }) => {
     const brui = [...datashop]
     brui.push(produiadd)
     setDatashop(brui)
+      Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "Your work has been saved",
+  showConfirmButton: false,
+  timer: 1500
+});
+
   }
   console.log(datashop);
   console.log(prix);
