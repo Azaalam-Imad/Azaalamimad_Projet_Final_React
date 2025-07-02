@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Images from '../constants/Images'
-import { motion } from "motion/react"
-
+import Images from '../constants/Images';
+import { motion } from "motion/react";
 
 const Blog = () => {
-  const posts = [
+  const blogPosts = [
     {
       id: 1,
       title: "Black Friday Guide: Best Sales & Discount Codes",
@@ -18,7 +17,7 @@ const Blog = () => {
     },
   ];
 
-  const products = [
+  const featuredProducts = [
     {
       id: 1,
       name: "Boxy7 T-Shirt with Roll Sleeve",
@@ -51,11 +50,10 @@ const Blog = () => {
     },
   ];
 
-  const tagList = ["Crafts", "Streetstyle"];
+  const blogTags = ["Crafts", "Streetstyle"];
 
   return (
     <div className="min-h-screen bg-white">
-     
       <div className="relative h-[300px] bg-black">
         <img
           alt="Blog Banner"
@@ -70,7 +68,7 @@ const Blog = () => {
       <main className="container mx-auto px-4 py-16">
         <div className="flex flex-col lg:flex-row gap-12">
           <section className="lg:w-2/3">
-            {posts.map((post, index) => (
+            {blogPosts.map((post, index) => (
               <article key={post.id} className="mb-16">
                 <div className="mb-6 overflow-hidden">
                   <img
@@ -83,7 +81,7 @@ const Blog = () => {
                 {index === 0 ? (
                   <>
                     <h2 className="mb-2 text-3xl font-bold hover:text-red-500 transition-colors">
-                      <p >{post.title}</p>
+                      <p>{post.title}</p>
                     </h2>
                     <div className="text-sm text-gray-500 mb-3">
                       by{" "}
@@ -96,17 +94,14 @@ const Blog = () => {
                       Etiam sed turpis sed lorem dignissim vulputate nec cursus
                       ante. Nunc sit...
                     </p>
-                    <p
-                      
-                      className="inline-block text-gray-800 hover:text-red-500 transition-colors"
-                    >
+                    <p className="inline-block text-gray-800 hover:text-red-500 transition-colors">
                       Continue Reading
                     </p>
                   </>
                 ) : index === 1 ? (
                   <>
                     <h2 className="mb-2 text-3xl font-bold hover:text-red-500 transition-colors">
-                      <p >{post.title}</p>
+                      <p>{post.title}</p>
                     </h2>
                     <div className="text-sm text-gray-500 mb-3">
                       by{" "}
@@ -119,15 +114,11 @@ const Blog = () => {
                       pellentesque mattis augue id euismod. Inter-dum et malesuada
                       fames
                     </p>
-                    <p
-                     
-                      className="inline-block text-gray-800 hover:text-red-500 transition-colors"
-                    >
+                    <p className="inline-block text-gray-800 hover:text-red-500 transition-colors">
                       Continue Reading
                     </p>
                   </>
                 ) : (
-                
                   <>
                     <div className="text-gray-500 text-sm mb-3">
                       {post.date} <span className="mx-2">|</span> {post.category}
@@ -165,23 +156,23 @@ const Blog = () => {
             <div className="mb-12">
               <h3 className="mb-6 text-lg font-semibold">Featured Products</h3>
               <div className="space-y-4">
-                {products.map((item) => (
-                  <div key={item.id} className="flex gap-4">
+                {featuredProducts.map((product) => (
+                  <div key={product.id} className="flex gap-4">
                     <Link
-                      to={`/shop/${item.id}`}
+                      to={`/shop/${product.id}`}
                       className="flex-shrink-0 w-20 h-20"
                     >
                       <img
-                        src={Images[item.image]}
-                        alt={item.name}
+                        src={Images[product.image]}
+                        alt={product.name}
                         className="object-cover w-full h-full"
                       />
                     </Link>
                     <div>
                       <h4 className="text-sm hover:text-red-500 transition-colors">
-                        <Link to={`/ProductDetailPage/${item.id}`}>{item.name}</Link>
+                        <Link to={`/ProductDetailPage/${product.id}`}>{product.name}</Link>
                       </h4>
-                      <p className="text-gray-600">${item.price.toFixed(2)}</p>
+                      <p className="text-gray-600">${product.price.toFixed(2)}</p>
                     </div>
                   </div>
                 ))}
@@ -191,7 +182,7 @@ const Blog = () => {
             <div>
               <h3 className="mb-6 text-lg font-semibold">Tags Cloud</h3>
               <div className="flex flex-wrap gap-2">
-                {tagList.map((tag) => (
+                {blogTags.map((tag) => (
                   <Link
                     key={tag}
                     to={`/blog/tag/${tag.toLowerCase()}`}
@@ -210,4 +201,3 @@ const Blog = () => {
 };
 
 export default Blog;
-
