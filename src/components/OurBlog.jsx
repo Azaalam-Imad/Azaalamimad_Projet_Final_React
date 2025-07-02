@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogData from '../json/BlogData.json';
 import Images from '../constants/Images';
+import { motion } from "motion/react"
 
 const OurBlog = () => {
   return (

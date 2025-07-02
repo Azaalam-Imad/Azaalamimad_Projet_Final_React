@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from "motion/react"
 import { Mycontext } from '../context/Context';
 
 const Acount = () => {

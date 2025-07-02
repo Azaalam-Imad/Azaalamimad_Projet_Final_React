@@ -14,6 +14,11 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const navig = useNavigate()
+  const [show,setShow]=useState(false)
+  const [length,setLength]= useState(datashop.length)
+ if(length>=1){
+setShow(true)
+ }
 
   return (
     <div className="relative z-50 w-full h-[10vh]">
@@ -49,34 +54,58 @@ const Navbar = () => {
         </div>
       </div>
       {
-       shopinstat && (
-        <div className='w-[20rem] h-[25rem] bg-white fixed right-5 top-15 shadow-lg p-2 flex flex-col gap-5'>
-          <div className='w-full h-[70%] overflow-y-scroll '>
-            {
-              datashop.map(e=> (
-                <div className=' w-full h-[45%] mb-8 flex gap-3'>
-                  <div className='h-full w-[35%] '>
-                  <img src={Images[e[0].image]} alt="" className=' w-full' onClick={()=>supprodcart(e[0].id)} />
-                  </div>
-                  <div className='w-[60%]'>
-                    <p className='text-black/70'>{e[0].name}</p>
-                    <p className='text-black/45'>{cont} x ${e[0].price}
-                    </p>
-                  </div>
-                </div> 
-              ))
-             
-              
-            }
+  shopinstat && (
+    <div className='w-[20rem] max-h-[25rem] bg-white fixed right-5 top-15 shadow-lg p-2 flex flex-col gap-5'>
+      {datashop.length === 0 ? (
+        <p className="text-center text-gray-500 mt-10 mb-10">Your shopping cart is empty!</p>
+      ) : (
+        <>
+          <div className='w-full h-[70%] overflow-y-scroll'>
+            {datashop.map((e, index) => (
+              <div key={index} className='w-full h-[45%] mb-8 flex gap-3'>
+                <div className='h-full w-[35%]'>
+                  <img src={Images[e[0].image]} alt="" className='w-full' />
+                </div>
+                <div className='w-[60%]'>
+                  <p className='text-black/70'>{e[0].name}</p>
+                  <p className='text-black/45'>{cont} x ${e[0].price}</p>
+                  <button
+                    onClick={() => supprodcart(e[0].id)}
+                    className= "text-red-500 hover:underline cursor-pointer b "
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-          <p className='text-end'>Subtotal : ${prixtot}</p>
+          <p className='text-end'>Subtotal: ${prixtot}</p>
           <div className='flex justify-between'>
-            <button onClick={()=>{navig("/Carts") ; setShopinstat(false)}} className="bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-amber-700 cursor-pointer mt-4 sm:mt-0">View Cart</button>
-            <button className="bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-amber-700 cursor-pointer mt-4 sm:mt-0">Checkout</button>
+            <button
+              onClick={() => {
+                navig("/Carts");
+                setShopinstat(false);
+              }}
+              className="bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-amber-700 cursor-pointer mt-4 sm:mt-0"
+            >
+              View Cart
+            </button>
+            <button
+              onClick={() => {
+                navig("/chekout");
+                setShopinstat(false);
+              }}
+              className="bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-amber-700 cursor-pointer mt-4 sm:mt-0"
+            >
+              Checkout
+            </button>
           </div>
-        </div>
-       ) 
-      }
+        </>
+      )}
+    </div>
+  )
+}
+
       {menuOpen && (
         <div className="md:hidden fixed top-[10vh] left-0 w-full bg-white shadow-md z-40">
           <ul className="flex flex-col items-center gap-5 py-6 text-gray-700 text-base font-medium">

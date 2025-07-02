@@ -16,6 +16,7 @@ import Carts from './Pages/Carts'
 import Blog from './Pages/Blog'
 import  Features from './Pages/Features'
 import Sale from './Pages/Sale'
+import Checkout from './Pages/Checkout'
 
 function App() {
   
@@ -38,6 +39,7 @@ function App() {
       <Route path="/blog" element={<Blog />} />
       <Route path="/Features" element={<Features />} />
       <Route path="/sale" element={<Sale />} />
+      <Route path="/chekout" element={<Checkout />} />
     </Routes>
     <Footer />
     </MyProvider>

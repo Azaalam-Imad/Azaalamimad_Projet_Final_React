@@ -5,6 +5,7 @@ import Caroussel2 from '../components/Caroussel2';
 import FashionEcommerce from '../components/Fashen';
 import OurBlog from '../components/OurBlog';
 import { useNavigate } from 'react-router-dom';
+import { motion } from "motion/react"
 
 const Homes = () => {
     const navg= useNavigate()

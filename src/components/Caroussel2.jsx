@@ -4,6 +4,7 @@ import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 import ddata from "../json/produit.json";
 import { Link } from 'react-router-dom';
 import { Mycontext } from '../context/Context';
+import { motion } from "motion/react"
 
 const Caroussel2 = () => {
   const carouselRef = useRef(null);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Images from '../constants/Images'
 import { useNavigate } from 'react-router-dom';
+import { motion } from "motion/react"
 
 const FashionEcommerce = () => {
   const navg= useNavigate()

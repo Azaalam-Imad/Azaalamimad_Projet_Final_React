@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Images from '../constants/Images'
+import { motion } from "motion/react"
 
 
 const Blog = () => {
@@ -46,7 +47,7 @@ const Blog = () => {
       id: 5,
       name: "Boxy3 T-Shirt with Roll Sleeve",
       price: 30.0,
-      image: "shopy4",
+      image: "shopy5",
     },
   ];
 

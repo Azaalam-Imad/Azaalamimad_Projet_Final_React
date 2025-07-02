@@ -19,9 +19,9 @@ export const MyProvider = ({ children }) => {
     brui.push(produiadd)
     setDatashop(brui)
       Swal.fire({
-  position: "top-end",
+  position: "top",
   icon: "success",
-  title: "Your work has been saved",
+  title:" is added to cart !",
   showConfirmButton: false,
   timer: 1500
 });

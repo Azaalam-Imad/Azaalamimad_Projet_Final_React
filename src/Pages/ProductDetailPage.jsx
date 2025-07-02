@@ -4,7 +4,7 @@ import ddata from '../json/produit.json'
 import { useParams } from 'react-router-dom';
 import Images from '../constants/Images';
 import Caroussel2 from '../components/Caroussel2';
-
+import { motion } from "motion/react"
 const ProductDetailPage = () => {
   const [selectedSize, setSelectedSize] = useState('S');
   const [selectedColor, setSelectedColor] = useState('white');

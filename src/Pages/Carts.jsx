@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Minus, Plus } from 'lucide-react';
 import { Mycontext } from '../context/Context';
 import Images from '../constants/Images';
+import { motion } from "motion/react"
 
 const Carts = () => {
   const { datashop } = useContext(Mycontext);

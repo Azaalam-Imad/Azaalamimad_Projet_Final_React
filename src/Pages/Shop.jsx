@@ -4,6 +4,7 @@ import { Search } from 'lucide-react';
 import Images from '../constants/Images';
 import { Link } from 'react-router-dom';
 import { Mycontext } from '../context/Context';
+import { motion } from "motion/react"
 
 const Shop = () => {
   const [searchTerm, setSearchTerm] = useState('');

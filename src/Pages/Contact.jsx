@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Images from '../constants/Images';
+import { motion } from "motion/react"
 
 const Contact = () => {
   const [formData, setFormData] = useState({

@@ -1,5 +1,6 @@
 import React from 'react';
 import Images from '../constants/Images';
+import { motion } from "motion/react"
 
 const Sale = () => {
     return (
